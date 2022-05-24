@@ -1,6 +1,5 @@
 class PrototypesController < ApplicationController
 
-  before_action :authenticate_user!, expect: [:index, :new]
   before_action :move_to_index, except: [:index, :show]
 
 
@@ -51,13 +50,6 @@ class PrototypesController < ApplicationController
 
 end
 
-def move_to_index
-  unless user_signed_in?
-    redirect_to action: :index
-  end
-end
-
-
   private
 
   def prototype_params
@@ -65,3 +57,8 @@ end
 
   end
 
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
+  end
