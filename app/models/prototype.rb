@@ -4,9 +4,9 @@ class Prototype < ApplicationRecord
   has_one_attached :image
 
   validates :title, presence: true
-  validates :catch_copy, presence: true, unless: :was_attached?
-  validates :concept, presence: true, unless: :was_attached?
-  validates :image, presence: true, unless: :was_attached?
+  validates :catch_copy, presence: true
+  validates :concept, presence: true
+  validates :image, presence: true
 
 end
 
